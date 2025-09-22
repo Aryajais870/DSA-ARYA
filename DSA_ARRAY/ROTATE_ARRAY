@@ -1,0 +1,23 @@
+class Solution {
+   // APPORCH 2 AND BEST APPROCH
+    public static int[] reverse(int[] arr,int strt,int end){
+        int temp=0;
+        while(strt<end){
+           temp=arr[strt];
+            arr[strt]=arr[end];
+            arr[end]=temp;
+            if(strt<end)  strt++;
+            if(end>0) end--;
+        }
+        return arr;
+    }
+    public void rotate(int[] nums, int k) {
+        // Aprroch 2
+        int n = nums.length;
+         k=k%n; 
+        reverse(nums,0,n-k-1);
+        reverse(nums,n-k,n-1);
+        reverse(nums,0,n-1);
+    
+    }
+}
