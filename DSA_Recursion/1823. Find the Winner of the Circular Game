@@ -1,0 +1,13 @@
+class Solution {
+    public int findIdx(int n , int k){
+        if(n == 1) return 0;
+        int idx = findIdx(n-1,k);
+        idx = (idx+k)%n;
+        return idx;
+    }
+    public int findTheWinner(int n, int k) {
+             int res_idx  = findIdx(n,k);
+             return res_idx + 1;
+         
+    }
+}
